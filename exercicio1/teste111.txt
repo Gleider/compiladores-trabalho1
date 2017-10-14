@@ -1,0 +1,20 @@
+(use '[clojure.string])
+(use '[clojure.java.io])
+(import java.util.ArrayList)
+
+(defn MP  [a array]
+	(if (starts-with? a "PUSH ") 
+		(replace-first a "PUSH " "")
+		(if (starts-with? a "1")
+			;(.array.add("1") )
+		)
+	)
+)
+
+(with-open [rdr (reader "outPut.txt")]
+       ( def a (join "\n" ( line-seq rdr ) ) )       
+)
+(def array ( new ArrayList))
+(MP a array)
+( doto array(.add("1") ) )
+(println .array.get(0) )
