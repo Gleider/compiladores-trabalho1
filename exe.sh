@@ -43,7 +43,7 @@ echo "================================================"
       echo "Executando Analisador Léxico para mini-java..."
       cd exercicio2 && flex minijava.l
       gcc lex.yy.c	
-      gnome-terminal -e ./a.out
+      gnome-terminal -e ./a.out | xterm -e ./a.out
       echo "Finalizado."
       echo "Pressione enter para voltar..."
       read p
