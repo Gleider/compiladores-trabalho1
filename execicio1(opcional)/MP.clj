@@ -153,6 +153,23 @@
 														)
 													)
 												)
+												(if (starts-with? b "0") 
+													(do 
+														(if (starts-with? b "0\n") 
+															(do 
+																(def c(replace-first b "0\n" ""))
+																(def number1(str number 0))
+																(.add array number1)
+																(MP c array nil)
+															)
+															(do 
+																(def c(replace-first b "0" "PUSH "))
+																(def number1(str number 0))
+																(MP c array number1)
+															)
+														)
+													)
+												)
 											)
 										)
 									)
@@ -211,7 +228,7 @@
 							(def s2 ( - (.size array) 1) )
 							(def soma1( read-string(.get array s2 )) )
 							(def soma2( read-string(.get array s1 )) )
-							(def resultado ( / soma1 soma2 ) )
+							(def resultado ( / soma2 soma1 ) )
 							(doseq [n (range(-(.size array)2))]
 								(.add newArray (.get array n))
 							)
@@ -226,7 +243,7 @@
 								(def s2 ( - (.size array) 1) )
 								(def soma1( read-string(.get array s2 )) )
 								(def soma2( read-string(.get array s1 )) )
-								(def resultado ( - soma1 soma2 ) )
+								(def resultado ( - soma2 soma1 ) )
 								(doseq [n (range(-(.size array)2))]
 									(.add newArray (.get array n))
 								)
